@@ -1,0 +1,80 @@
+<!-- 
+    (C) 2026 Josef Weiß
+    Licensed under CC BY-NC 4.0
+    Commercial use prohibited without written permission
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolkenrechner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Wolken<span>rechner</span></h1>
+
+    <div class="card">
+
+        <div class="warning-box">
+            &#9888; Nutzung auf eigene Gefahr · Nur zur Planung
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label>Temperatur</label>
+                <input type="number" id="temp" step="1" placeholder="15">
+                <span class="unit">°C</span>
+            </div>
+            <div class="input-group">
+                <label>Taupunkt</label>
+                <input type="number" id="taup" step="1" placeholder="8">
+                <span class="unit">°C</span>
+            </div>
+            <div class="input-group">
+                <label>Platzhöhe</label>
+                <input type="number" id="elev" placeholder="523">
+                <span class="unit" id="aktEinh">ft</span>
+            </div>
+        </div>
+
+        <div class="limit-row">
+            <div class="input-group">
+                <label>Einheit</label>
+                <select id="einheit">
+                    <option value="ft" selected>Fuß (ft)</option>
+                    <option value="m">Meter (m)</option>
+                </select>
+                <span class="unit">ft / m</span>
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button id="calcBtn" onclick="onClickBtn()">Berechnen</button>
+        </div>
+
+        <div class="results">
+            <div class="result-box box-head">
+                <div class="tag">Wolkenuntergrenze</div>
+                <div class="value" id="cloud">–</div>
+                <div class="sub">AGL</div>
+            </div>
+            <div class="result-box box-cross">
+                <div class="tag">Höhendifferenz</div>
+                <div class="value" id="field">–</div>
+                <div class="sub">zum Platz</div>
+            </div>
+        </div>
+
+        <div id="warning"></div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p style="text-align: center;"><a href="../index.html">Zurück zur Startseite</a></p>
+    (C)2026 Josef Weiß
+    <a href="mailto:weiss.josef1987@googlemail.com">Mail schreiben</a>
+</footer>
+</html>
