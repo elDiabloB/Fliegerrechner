@@ -44,6 +44,12 @@
         (C)2026 Josef Weiß
         <a href="mailto:weiss.josef1987@googlemail.com">Mail schreiben</a>
     </footer>
-
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(() => console.log('Service Worker registriert'))
+                .catch(err => console.log('Fehler:', err));
+        }
+    </script>
 </body>
 </html>
