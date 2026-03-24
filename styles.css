@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #0d1117;
+    color: #c8d8e8;
+    font-family: 'Barlow Condensed', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 8px;
+}
+h1 span { color: #e8a020; }
+
+.subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #4a6070;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+}
+
+.kacheln {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 560px;
+}
+
+.kachel {
+    background: #131920;
+    border: 1px solid #1e2d3d;
+    border-radius: 6px;
+    padding: 28px 16px;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.kachel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e8a020, transparent);
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.kachel:hover {
+    border-color: #7a5010;
+    box-shadow: 0 0 20px rgba(232,160,32,0.15);
+    transform: translateY(-2px);
+}
+
+.kachel:hover::before { opacity: 1; }
+
+.kachel-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.kachel-titel {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.kachel-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #4a6070;
+}
+
+footer {
+    margin-top: 48px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #4a6070;
+    text-align: center;
+}
+footer a { color: #3a9fdf; }
+
+@media (max-width: 480px) {
+    .kacheln {
+        grid-template-columns: 1fr;
+    }
+}
